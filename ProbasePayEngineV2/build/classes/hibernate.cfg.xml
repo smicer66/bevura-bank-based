@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <!-- <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/probasepay</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>-->
+        <property name="connection.provider_class">com.zaxxer.hikari.hibernate.HikariConnectionProvider</property>
+        <property name="hikari.minimumIdle">5</property>
+        <property name="hikari.maximumPoolSize">10</property>
+        <property name="hikari.idleTimeout">120000</property>
+        <!-- <property name="hikari.idleTimeout">30000</property> -->
+        <property name="hikari.dataSourceClassName">com.mysql.jdbc.jdbc2.optional.MysqlDataSource</property>
+        <property name="hikari.dataSource.url">jdbc:mysql://localhost/ekwacha_village_banking</property>
+        <property name="hikari.dataSource.user">root</property>
+        <property name="hikari.dataSource.password"></property>
+        <property name="hikari.dataSource.cachePrepStmts">true</property>
+        <property name="hikari.dataSource.prepStmtCacheSize">250</property>
+        <property name="hikari.dataSource.prepStmtCacheSqlLimit">2048</property>
+        <property name="hikari.dataSource.rewriteBatchedStatements">true</property>
+
+        <!-- JDBC connection pool (use the built-in) 
+        <property name="connection.pool_size">1</property>-->
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <property name="current_session_context_class">thread</property>
+
+
+		<!-- <property name="c3p0.acquire_increment">3</property> 
+		<property name="c3p0.idle_test_period">300</property> 
+		<property name="c3p0.max_size">100</property>
+		<property name="c3p0.max_statements">0</property> 
+		<property name="c3p0.min_size">10</property>
+		<property name="c3p0.timeout">5000</property>-->
+		
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+
+		<!-- <mapping class="com.probase.probasepay.models.Acquirer"></mapping>
+		<mapping class="com.probase.probasepay.models.Country"></mapping>
+        <mapping class="com.probase.probasepay.models.Province"></mapping>
+        <mapping class="com.probase.probasepay.models.District"></mapping>
+        <mapping class="com.probase.probasepay.models.Customer"></mapping>
+        <mapping class="com.probase.probasepay.models.Bank"></mapping>
+        <mapping class="com.probase.probasepay.models.PoolAccount"></mapping>
+        <mapping class="com.probase.probasepay.models.Account"></mapping>
+        <mapping class="com.probase.probasepay.models.AccountStatement"></mapping>
+        <mapping class="com.probase.probasepay.models.PoolAccountStatement"></mapping>
+        <mapping class="com.probase.probasepay.models.MerchantScheme"></mapping>
+        <mapping class="com.probase.probasepay.models.Merchant"></mapping>
+        <mapping class="com.probase.probasepay.models.VendorService"></mapping>
+        <mapping class="com.probase.probasepay.models.RPin"></mapping>
+        <mapping class="com.probase.probasepay.models.User"></mapping>
+        <mapping class="com.probase.probasepay.models.Wallet"></mapping>
+        <mapping class="com.probase.probasepay.models.WalletAccount"></mapping>
+        <mapping class="com.probase.probasepay.models.CardScheme"></mapping>
+        <mapping class="com.probase.probasepay.models.ECard"></mapping>
+        <mapping class="com.probase.probasepay.models.MobileAccount"></mapping>
+        <mapping class="com.probase.probasepay.models.Device"></mapping>
+        <mapping class="com.probase.probasepay.models.Transaction"></mapping>
+        <mapping class="com.probase.probasepay.models.BankStaff"></mapping>
+        <mapping class="com.probase.probasepay.models.AdminUser"></mapping>
+        <mapping class="com.probase.probasepay.models.Setting"></mapping>
+        <mapping class="com.probase.probasepay.models.BillingAddress"></mapping>
+        <mapping class="com.probase.probasepay.models.TransactionSwept"></mapping>
+        <mapping class="com.probase.probasepay.models.RequestTransactionReversal"></mapping>
+        <mapping class="com.probase.probasepay.models.MerchantBankAccount"></mapping>-->
+        
+        
+        <!-- <mapping class="com.probase.probasepay.models.Account"></mapping>
+		<mapping class="com.probase.probasepay.models.BankStaff"></mapping>
+		<mapping class="com.probase.probasepay.models.Device"></mapping>
+		<mapping class="com.probase.probasepay.models.MerchantBankAccount"></mapping>
+		<mapping class="com.probase.probasepay.models.Province"></mapping>
+		<mapping class="com.probase.probasepay.models.Setting"></mapping>
+		<mapping class="com.probase.probasepay.models.BillingAddress"></mapping>
+		<mapping class="com.probase.probasepay.models.District"></mapping>
+		<mapping class="com.probase.probasepay.models.MerchantScheme"></mapping>
+		<mapping class="com.probase.probasepay.models.Transaction"></mapping>
+		<mapping class="com.probase.probasepay.models.Acquirer"></mapping>
+		<mapping class="com.probase.probasepay.models.CardScheme"></mapping>
+		<mapping class="com.probase.probasepay.models.ECard"></mapping>
+		<mapping class="com.probase.probasepay.models.ECardBin"></mapping>
+		<mapping class="com.probase.probasepay.models.Refund"></mapping>
+		<mapping class="com.probase.probasepay.models.TransactionSwept"></mapping>
+		<mapping class="com.probase.probasepay.models.Country"></mapping>
+		<mapping class="com.probase.probasepay.models.ECardRequest"></mapping>
+		<mapping class="com.probase.probasepay.models.RequestTransactionReversal"></mapping>
+		<mapping class="com.probase.probasepay.models.User"></mapping>
+		<mapping class="com.probase.probasepay.models.Bank"></mapping>
+		<mapping class="com.probase.probasepay.models.Customer"></mapping>
+		<mapping class="com.probase.probasepay.models.Merchant"></mapping>
+		<mapping class="com.probase.probasepay.models.SMSMesage"></mapping>
+		<mapping class="com.probase.probasepay.models.Issuer"></mapping>
+		<mapping class="com.probase.probasepay.models.MPQRData"></mapping>
+		<mapping class="com.probase.probasepay.models.ECardDeposit"></mapping>
+		<mapping class="com.probase.probasepay.models.UtilityPurchased"></mapping>
+		<mapping class="com.probase.probasepay.models.FundsTransfer"></mapping>
+		<mapping class="com.probase.probasepay.models.WalletTransaction"></mapping>
+		<mapping class="com.probase.probasepay.models.MerchantPayment"></mapping>
+		<mapping class="com.probase.probasepay.models.AutoDebit"></mapping>
+		<mapping class="com.probase.probasepay.models.DeviceBankAccount"></mapping>
+		<mapping class="com.probase.probasepay.models.Settlement"></mapping>
+		<mapping class="com.probase.probasepay.models.AppDevice"></mapping>
+		<mapping class="com.probase.probasepay.models.BankBranch"></mapping> -->
+		
+		<mapping class="com.probase.probasepay.models.Account"></mapping>
+		<mapping class="com.probase.probasepay.models.BankStaff"></mapping>
+		<mapping class="com.probase.probasepay.models.Device"></mapping>
+		<mapping class="com.probase.probasepay.models.MerchantBankAccount"></mapping>
+		<mapping class="com.probase.probasepay.models.Province"></mapping>
+		<mapping class="com.probase.probasepay.models.Setting"></mapping>
+		<mapping class="com.probase.probasepay.models.BillingAddress"></mapping>
+		<mapping class="com.probase.probasepay.models.District"></mapping>
+		<mapping class="com.probase.probasepay.models.MerchantScheme"></mapping>
+		<mapping class="com.probase.probasepay.models.Transaction"></mapping>
+		<mapping class="com.probase.probasepay.models.Acquirer"></mapping>
+		<mapping class="com.probase.probasepay.models.CardScheme"></mapping>
+		<mapping class="com.probase.probasepay.models.ECard"></mapping>
+		<mapping class="com.probase.probasepay.models.ECardBin"></mapping>
+		<mapping class="com.probase.probasepay.models.Refund"></mapping>
+		<mapping class="com.probase.probasepay.models.TransactionSwept"></mapping>
+		<mapping class="com.probase.probasepay.models.Country"></mapping>
+		<mapping class="com.probase.probasepay.models.ECardRequest"></mapping>
+		<mapping class="com.probase.probasepay.models.RequestTransactionReversal"></mapping>
+		<mapping class="com.probase.probasepay.models.User"></mapping>
+		<mapping class="com.probase.probasepay.models.Bank"></mapping>
+		<mapping class="com.probase.probasepay.models.Customer"></mapping>
+		<mapping class="com.probase.probasepay.models.Merchant"></mapping>
+		<mapping class="com.probase.probasepay.models.SMSMesage"></mapping>
+		<mapping class="com.probase.probasepay.models.Issuer"></mapping>
+		<mapping class="com.probase.probasepay.models.MPQRData"></mapping>
+		<mapping class="com.probase.probasepay.models.ECardDeposit"></mapping>
+		<mapping class="com.probase.probasepay.models.UtilityPurchased"></mapping>
+		<mapping class="com.probase.probasepay.models.FundsTransfer"></mapping>
+		<mapping class="com.probase.probasepay.models.WalletTransaction"></mapping>
+		<mapping class="com.probase.probasepay.models.MerchantPayment"></mapping>
+		<mapping class="com.probase.probasepay.models.AutoDebit"></mapping>
+		<mapping class="com.probase.probasepay.models.DeviceBankAccount"></mapping>
+		<mapping class="com.probase.probasepay.models.Settlement"></mapping>
+		<mapping class="com.probase.probasepay.models.AppDevice"></mapping>
+		<mapping class="com.probase.probasepay.models.AccountMapRequest"></mapping>
+		<mapping class="com.probase.probasepay.models.AutoDebitMandate"></mapping>
+		<mapping class="com.probase.probasepay.models.BevuraToken"></mapping>
+		<mapping class="com.probase.probasepay.models.BankBranch"></mapping>
+		<mapping class="com.probase.probasepay.models.Airtime2Money"></mapping>
+		<mapping class="com.probase.probasepay.models.AutoDebitMandate"></mapping>
+		<mapping class="com.probase.probasepay.models.ContributionPackage"></mapping>
+		<mapping class="com.probase.probasepay.models.ContributionPackageDebit"></mapping>
+		<mapping class="com.probase.probasepay.models.Group"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupAccount"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupContribution"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupLoan"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupLoanPenalty"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupLoanRepayment"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupLoanRepaymentsExpected"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupLoanTerms"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupMember"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupMessage"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupPaymentsExpected"></mapping>
+		<mapping class="com.probase.probasepay.models.VBCustomerAccount"></mapping>
+		<mapping class="com.probase.probasepay.models.GroupJoinRequest"></mapping>
+		
+		
+		
+		
+		
+        
+        <event type="pre-update">
+			<listener class="com.probase.probasepay.event.HibernateEventListener"/>
+		</event>
+		<event type="pre-insert">
+			<listener class="com.probase.probasepay.event.HibernateEventListener"/>
+		</event>
+
+    </session-factory>
+
+</hibernate-configuration>

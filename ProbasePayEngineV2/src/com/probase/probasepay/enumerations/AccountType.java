@@ -1,0 +1,5 @@
+package com.probase.probasepay.enumerations;
+
+public enum AccountType {
+	SAVINGS, CURRENT, VIRTUAL, DEVICE_SETTLEMENT, PROBASE_TUTUKA_MASTERCARD_TRANSIT_ACCOUNT, MERCHANT_TRANSIT_ACCOUNT
+}
