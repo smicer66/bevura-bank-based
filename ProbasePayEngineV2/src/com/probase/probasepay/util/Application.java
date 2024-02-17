@@ -45,15 +45,7 @@ public class Application {
 	private static Application instance;
 	//private static Key key;
 	private static JSONObject accessKeys;
-	/*public String businessUnit = "GOTV";
-	public String dataSource = "Ghana_UAT";
-	public String interfaceType = null;
-	public String ipAddress = "127.1.1";
-	public String language = "English";
-	public String vendorCode = "eTranzactD1Stv";
-	public String currencyCode = "GSH";
-	public String methodOfPayment = "CASH";
-	public String paymentVendorCode = "RTPP_Ghana_eTranzact";*/
+	
 	private Logger log = Logger.getLogger(Application.class);
 	private ServiceLocator serviceLocator = ServiceLocator.getInstance();
 	public SwpService swpService = null;
@@ -77,31 +69,22 @@ public class Application {
 	private Double minimumBalance = 10.00;
 	private Double minimumTransactionAmountWeb = 1.00;
 	private Double maximumTransactionAmountWeb = 100001.00;*/
-	//public String cyberSourceAccessKeyOld = "ea291f2aa1e93806835e1308e9262e35";
-	//public String cyberSourceAccessKey = "ec5891c2e1513fc5a62054abca70593f";
-	//public String cyberSourceProfileIdTestOld = "D9022B8F-3DCF-424C-8176-174B5245F598";
-	//public String cyberSourceProfileId = "E00109B5-665F-4696-A37D-96FAA1C718E5";
+	//public String cyberSourceAccessKeyOld = "cyberSourceAccessKeyOld";
+	//public String cyberSourceAccessKey = "cyberSourceAccessKey";
+	//public String cyberSourceProfileIdTestOld = "cyberSourceProfileIdTestOld";
+	//public String cyberSourceProfileId = "cyberSourceProfileId";
 	/*public String cyberSourceSecretKeyOld = 
-			"a820cdde511b41d1b794b38286e51a41e5e538f6f049458c9f7c4b7e3af32b7ba1b17e193" +
-			"1a74a12921af1a26467daf79784b8822b2b4842bc26e49fc9536e1ec6b14da77b1a4cd884" +
-			"6a15d7e1e7d1d026b0d86bee9c49e1bf223ba4fdda35c80ec48ec253ec42f5875fb9481a8" +
-			"634336ce09b587953462092cabaa3e9265903";*/
-	/*public String cyberSourceSecretKey = "9dc88315a579485e969c11d5dcf5d9994e031163e839477" +
-			"cbb85ade4271cc3fd617c3edce7a149a086b9582d2fbf1fc8002e05f81b164f3c98852871df0" +
-			"594fa3a4e7e350993421997a927881c19ea31ca26dbff140748ffa2cfe182690c3b480595381" +
-			"81fb64424bc5f93c49993c53eb3972bb3105d460a884dcb1831ce3df9";
+			"cyberSourceSecretKeyOld";*/
+	/*public String cyberSourceSecretKey = "cyberSourceSecretKey";
 	
 
-	public String DemocyberSourceProfileId = "E25266EE-4CC1-4023-8FFD-441BA1FA41A1";
-	public String DemocyberSourceAccessKey = "e7834645737f370393cabf45d8485820";
-	public String DemocyberSourceSecretKey = "98a2d86252c74baf9b02cc74b9ac399ed85b2b1" +
-			"f9d57439883fd95453e669c2e66de10443f7542968dc15f4d6dfbcdd12d55639fe5b" +
-			"6448bb769e9fd708ea709988f08b031d849d5bd8a6c1fb521fba00a5a68bc84594dd" +
-			"198bd3739b4c0273a92634f1c26704e1ebdec4404ae1339938b1d4533bf8744af8aef499ab6750bb4";
+	public String DemocyberSourceProfileId = "DemocyberSourceProfileId";
+	public String DemocyberSourceAccessKey = "DemocyberSourceAccessKey";
+	public String DemocyberSourceSecretKey = "DemocyberSourceSecretKey";
 	
 	public String cyberSourceLocale = "en-us";
-	public String ubaMerchantId = "CMZAM10541";
-	public String ubaServiceKey = "283bdea5-c1fa-47a0-8392-43a320d8060f";
+	public String ubaMerchantId = "ubaMerchantId";
+	public String ubaServiceKey = "ubaServiceKey";
 	public String zambiaCurrencyCode = "894";
 	public String ubaDemoURL = "https://ucollect.ubagroup.com/cipg-payportal/regptran";
 	public String ubaLiveURL = "https://ucollect.ubagroup.com/cipg-payportal/regptran";*/
@@ -147,20 +130,17 @@ public class Application {
 				String val = set.getValue();
 				if(set.getName().toLowerCase().equals("cyberSourceAccessKey".toLowerCase()))
 				{
-					val = "ec5891c2e1513fc5a62054abca70593f";
+					val = "CyberSourceAccessKey";
 					this.setCyberSourceAccessKey(val);
 				}
 				else if(set.getName().toLowerCase().equals("cyberSourceProfileId".toLowerCase()))
 				{
-					val = "E00109B5-665F-4696-A37D-96FAA1C718E5";
+					val = "CyberSourceProfileId";
 					this.setCyberSourceProfileId(val);
 				}
 				else if(set.getName().toLowerCase().equals("cyberSourceSecretKey".toLowerCase()))
 				{
-					val = "9dc88315a579485e969c11d5dcf5d9994e031163e839477" +
-							"cbb85ade4271cc3fd617c3edce7a149a086b9582d2fbf1fc8002e05f81b164f3c98852871df0" +
-							"594fa3a4e7e350993421997a927881c19ea31ca26dbff140748ffa2cfe182690c3b480595381" +
-							"81fb64424bc5f93c49993c53eb3972bb3105d460a884dcb1831ce3df9";
+					val = "Cybersourcesecretkey";
 					this.setCybersourcesecretkey(val);
 				}
 				else if(set.getName().toLowerCase().equals("cyberSourceLocale".toLowerCase()))
